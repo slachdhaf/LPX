@@ -37,21 +37,23 @@ $(document).ready(function () {
         return false;//Avoid going to the link indicated by href attribute
     });
 
-    $(".prev").click(function () {
+    $("#content").on("click", "h1.prev", function () {
         if (analyse_steps.length > 0) {
             $(analyse_steps[analyse_steps.length - 1][0]).animate({left: 0}, 800);
             $(analyse_steps[analyse_steps.length - 1][1]).animate({left: "100%"}, 800);
             analyse_steps.pop();
         }
     });
-
-    $(".prev").hover(function () {
+    
+    $("#content").on("mouseenter", "h1.prev", function() {
         if (analyse_steps.length > 0) {
             $(this).css("cursor", "pointer")
                    .css("opacity", "1");
         }
         return false;
-    }, function () {
+    });
+
+    $("#content").on("mouseleave", "h1.prev", function() {
         $(this).css("cursor", "")
                .css("opacity", "");
     });

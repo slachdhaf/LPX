@@ -23,7 +23,7 @@
         <div id="content">
             <div id="analyse_content">
                 <div id="folder_choice" class="step">
-                    <img src="img/folder.png" class="title_icon"/><h1>Choix du dossier</h1>
+                    <img src="img/folder.png" class="title_icon"/><h1>Choix du dossier</h1><h1 class="prev"><<</h1>
                     <hr/>
                     <div id="folder_selection">
                         <div class="contentTitle">Dossier à analyser</div>
@@ -51,7 +51,6 @@
                 <div id="folder_results" class="step"></div>
                 <div id="file_content"   class="step"></div>
                 <div id="log_content"    class="step"></div>
-                <h1 class="prev"><<</h1>
             </div>
             <div id="stats_content">
                 <img src="img/stats_content.png" class="title_icon"/><h1>Statistiques</h1>

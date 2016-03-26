@@ -2,27 +2,33 @@ $(document).ready(function () {
     "use strict";
 
     $(".next_step").click(function () {
-        $("#folder_results").html("");
+        var spinner = '<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>';
+        
+        $("#folder_results").html(spinner);
         $.post(
             'Processor.php',
             {
                 folderPath : $(this).parent().find("input").val()
             },
             function (data) {
-                $.post(
-                    'FolderResults.php',
-                    {
-                        page_size : filePageSize
-                    },
-                    function (html) {
-                        $("#folder_results").html(html);
-                        $("table.file table.figures").find("td").each(function () {
-                            $(this).css("width", "0");
-                            $(this).animate({width :  $(this).find("a").html()}, 100);
-                        });
-                    },
-                    'text'
-                );
+                if (data) {
+                   $("#folder_results").html(data); 
+                } else {
+                    $.post(
+                        'FolderResults.php',
+                        {
+                            page_size : filePageSize
+                        },
+                        function (html) {
+                            $("#folder_results").html(html);
+                            $("table.file table.figures").find("td").each(function () {
+                                $(this).css("width", "0");
+                                $(this).animate({width :  $(this).find("a").html()}, 100);
+                            });
+                        },
+                        'text'
+                    );
+                }
             },
             'text'
         );
