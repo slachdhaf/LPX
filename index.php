@@ -14,7 +14,7 @@
             <div href="" id="analyse" class="icon"><a href="#analyse_content" class="item rotate">ANALYSE</a></div>
             <div href="" id="stats" class="icon"><a href="#stats_content" class="item rotate">STATISTIQUES</a></div>
             <div href="" id="clock" class="icon"><a href="" class="item rotate">ARCHIVES</a></div>
-            <div href="" id="parameter" class="icon"><a href="" class="item rotate">CONFIGURATION</a></div>
+            <div href="" id="parameter" class="icon"><a href="#config_content" class="item rotate">CONFIGURATION</a></div>
             <hr class="delimiter"/>
             <div id="capgemini"><span class="rotate">LOG PROCESSOR X - LPX</span></div>
 
@@ -61,6 +61,79 @@
                     <div data-value="1 2 3 4 3 2 1"></div>
                     <div data-value="2 4 6 8 6 4 9"></div>
                     <div data-value="2 4 1 10 6 2 7"></div>
+                </div>
+            </div>
+            <div id="config_content">
+                <img src="img/config_content.png" class="title_icon"/><h1>Configuration</h1>
+                <hr/>
+                <div class="toolbar"><button type="submit" class="update">Modifier</button> <button type="submit" class="save">Enregistrer</button> <button type="submit" class="cancel">Annuler</button></div>
+                
+                <div class="processor_config">
+                    <div class="contentTitle">Configuration du traitement</div>
+                    <div class="logContent">
+                        <table class="key_value">
+                            <tr><td>Répertoire</td><td class="input"><input value="/Users/samilachdhaf/Desktop/ClaimCenter/logs"/></td></tr>
+                            <tr><td>Motif délimiteur</td><td class="input"><input value=".* {4}.*\-\d+ {6}\d{4}\-\d{2}\-\d{2} \d{2}:\d{2}:\d{2},\d{3} [A-Z]+ \[.*\]" /></td></tr>
+                            <tr><td>Durée max</td><td class="input"><input value="" /></td></tr>
+                            <tr><td>Motif clé</td><td class="input"><input value="d{14}73" /></td></tr>
+                            <!-- TODO : Make it an array with colums: index, code, label, pattern, description-->
+                            <tr><td>Motif ignoré</td><td class="input"><input value=":\d*)" /></td></tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="header_config">
+                    <div class="contentTitle">Configuration du traitement des entêtes</div>
+                    <div class="logContent">
+                        <table class="key_value">
+                            <tr><td>Motif de découpage</td><td class="input"><input value="(.*) {4}(.*)\-\d+ {6}(\d{4}\-\d{2}\-\d{2} \d{2}:\d{2}:\d{2},\d{3}) ([A-Z]+) \[(.*)\]" /></td></tr>
+                        </table>
+                        
+                        <table class="file">
+                            <tr><td colspan="2">Code</td><td>Libéllé</td><td>Description</td></tr>
+                            <tr>
+                                <td class="row_icon"><a class="up" href="#">&#9650;</div><a class="down" href="#">&#9660;</div></td>
+                                <td><input value = "intance"/></td>
+                                <td><input value="Instance"/></td>
+                                <td><input value="Instance du serveur sur laquelle est survenue l'incident."/></td>
+                            </tr>
+                            <tr>
+                                <td class="row_icon"><a class="up" href="#">&#9650;</div><a class="down" href="#">&#9660;</div></td>
+                                <td><input value="process"/></td>
+                                <td><input value="Processus"/></td>
+                                <td><input value="Processus concernant l'incident."/></td>
+                            </tr>
+                            <tr>
+                                <td class="row_icon"><a class="up" href="#">&#9650;</div><a class="down" href="#">&#9660;</div></td>
+                                <td><input value="date"/></td>
+                                <td><input value="Date"/></td>
+                                <td><input value="Date de survenance de l'incident."/></td>
+                            </tr>
+                            <tr>
+                                <td class="row_icon"><a class="up" href="#">&#9650;</div><a class="down" href="#">&#9660;</div></td>
+                                <td><input value="criticity"/></td>
+                                <td><input value="Criticité"/></td>
+                                <td><input value="Criticité de l'incident."/></td>
+                            </tr>
+                            <tr>
+                                <td class="row_icon"><a class="up" href="#">&#9650;</div><a class="down" href="#">&#9660;</div></td>
+                                <td><input value=""/></td>
+                                <td><input value=""/></td>
+                                <td><input value=""/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="display_config">
+                    <div class="contentTitle">Configuration de l'affichage des résultats</div>
+                    <div class="logContent">
+                        <table>
+                            <tr><td>Nombre de fichiers par page</td><td class="input"><input type="number" step="5" min="1" max="100" value="5">
+ </td></tr>
+                            <tr><td>Nombre de logs par page</td><td class="input"><input type="number" step="5" min="1" max="100" value="40">
+ </td></tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

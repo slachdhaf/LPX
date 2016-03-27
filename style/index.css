@@ -58,6 +58,12 @@ h1, #menu{
     margin: 0;
 }
 
+input{
+    color: white;
+    border: 1px solid gray;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 #menu{
     height: 100%;
     width: 40px;
@@ -332,6 +338,7 @@ h1, #menu{
 
 .file td{
     padding: 2px;
+    padding-right: 5px;
 }
 
 #folder_results .file tr:last-child{
@@ -345,6 +352,10 @@ h1, #menu{
 
 .file a:hover{
     color: white;
+}
+
+.file input{
+    width: 100%;
 }
 
 .checkbox{
@@ -365,19 +376,15 @@ h1, #menu{
     opacity: 0.8;
 }
 
+.file .checkbox{
+    padding-right: 0;
+}
+
 .file .figures{
     font-size: 6pt;
     height: 10px;
     overflow: hidden;
     width: 100%;
-}
-
-.file td{
-    width: 25%;
-}
-
-.file tr td:first-child{
-    width: 0;
 }
 
 .figures .red, .figures .red:hover{
@@ -574,15 +581,45 @@ a.checkbox:hover{
     color: rgba(255, 255, 255, 0.7);
 }
 
-.logContent table{
+.logContent .key_value{
     border-collapse: separate;
 }
 
-.logContent .key{
-    width: 135px;
+#config_content .logContent .key_value{
+    width: 100%;
 }
 
-.logContent .input{
+.logContent .key_value td input[type="number"]{
+    width: 30px;
+}
+
+.logContent .key_value td input{
+    width: 100%;
+}
+
+.logContent .key{
+    padding-right: 5px;
+}
+
+#config_content .logContent .input{
+    width: 100%;
+}
+
+.up, .down{
+    font-size: 7px;
+    display: block;
+    width: 0px;
+}
+
+.file .row_icon{
+    width: 1px;
+    padding: 0;
+    padding-left: 2px;
+    padding-right: 6px;
+    margin: 0;
+}
+
+#log_content .logContent .input{
     border: 1px solid gray;
     background-color: rgba(255, 255, 255, 0.1);
     width: 100px;
@@ -593,11 +630,11 @@ a.checkbox:hover{
     margin: 0;
 }
 
-.logContent .input-active{
+#log_content .logContent .input-active{
     border: 1px solid white;
 }
 
-.logContent .input-hover{
+#log_content .logContent .input-hover{
     border: 1px solid rgb(55, 154, 220);
     background-color: rgba(55, 154, 220, 0.2);
 }
@@ -610,11 +647,12 @@ a.checkbox:hover{
 
 .remove, .add{
     padding: 0;
-    width: 15px;
-    padding-bottom: 1px;
+    width: 12px;
+    height: 14px;
+    line-height: 10px;
 }
 
-.logContent .keys{
+#log_content .logContent .keys{
     width: 100%;
 }
 
@@ -622,6 +660,13 @@ a.checkbox:hover{
     width: 100%;
     height: 100%;
     position: absolute;
+}
+
+#config_content{
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    word-wrap: break-word;
 }
 
 #stats_content{

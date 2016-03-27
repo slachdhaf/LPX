@@ -36,7 +36,7 @@ if(isset($_POST['folderPath'])){
                     $fileSize = filesize($filePath);
 
                     //Splits the file retrieving each log block including its stacktrace.
-                    $logs = preg_split('#(ccbatch {4}.*\-\d+ {6}\d{4}\-\d{2}\-\d{2} \d{2}:\d{2}:\d{2},\d{3} [A-Z]+ \[.*\])#', file_get_contents($filePath), -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+                    $logs = preg_split('#(.* {4}.*\-\d+ {6}\d{4}\-\d{2}\-\d{2} \d{2}:\d{2}:\d{2},\d{3} [A-Z]+ \[.*\])#', file_get_contents($filePath), -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
 
                     //Stores the log content without the header
                     $logs_content = array();
